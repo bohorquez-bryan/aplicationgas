@@ -1,0 +1,38 @@
+<ion-menu id="menuGas" [content]="content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-item class="userPerfil">
+          <ion-avatar item-start *ngIf="userLogged">
+            <div *ngIf="userLogged.photo">
+                <img *ngIf="userLogged.photo != ''" src="photo">
+                <img *ngIf="userLogged.photo == ''" src="assets/imgs/user.png">
+            </div>
+          </ion-avatar>
+          <ion-avatar item-start *ngIf="distribuitorLogged">
+            <img src="assets/imgs/user.png">
+          </ion-avatar>
+          <h2 *ngIf="userLogged || distribuitorLogged" >Bienvenido,</h2>
+          <p *ngIf="userLogged ">{{userLogged.name}}  {{userLogged.lastname}}</p>
+          <p *ngIf="distribuitorLogged">{{distribuitorLogged.name}}  {{distribuitorLogged.lastname}}</p>
+        </ion-item>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list class="la">
+        <button ion-item menuClose (click)="gotoHome()">
+          Inicio
+        </button>
+        <button ion-item menuClose (click)="gotoProfile()">
+          Perfil
+        </button>
+        <button ion-item menuClose *ngIf="typeUser == 'user'" (click)="gotoLocation()">
+          Mis Pedidos
+        </button> 
+        <button ion-item menuClose (click)="signOut()">
+          Cerrar sesión
+        </button>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  
+<ion-nav id="nav" #content [root]="rootPage"></ion-nav>

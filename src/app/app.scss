@@ -1,0 +1,76 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+.userPerfil.item-md.item-block .item-inner{
+    padding-right: 8px;
+    border-bottom: none;
+}
+
+ion-content{
+	background: linear-gradient(0deg,#071918,#EFFBFB);
+}
+
+.btn{
+	border-radius: 25px;
+	border:solid 3px #FFFFFF;
+	color: #FFFFFF;
+}
+
+.la{
+	background-color: transparent;
+
+}
+
+.lab[stacked], .lab[floating]{
+	color: #FFFFFF !important;
+
+}
+img{
+	width: 250px;
+	//padding-left: 80px;
+}
+
+.item-label-stacked .text-input-md, .item-label-floating .text-input-md {
+    color: rgb(224, 217, 217) !important;
+}
+.select-text {
+    color: white !important;
+}
+.item-md.item-input.item-input-has-focus.item-inner, .item-md.item-input.input-has-focus .item-inner {
+	border-bottom: 1px solid white !important;
+	box-shadow: inset 0 -1px 0 0 white !important;
+}
+
+.item-label-stacked .text-input-md, .item-label-floating .text-input-md {
+    color: #ffffff !important;
+}
+
+.select-md .select-icon .select-icon-inner {
+    color: white;
+}
+.item-input .label-md, .item-select .label-md, .item-datetime .label-md {
+    color:white;
+}
+
+.item-input-has-focus .label-md[stacked],
+.input-has-focus .label-md[stacked],
+.item-input-has-focus .label-md[floating],
+.input-has-focus .label-md[floating] {
+  color: white;
+}
+
+

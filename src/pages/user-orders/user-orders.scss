@@ -1,0 +1,17 @@
+page-user-orders {
+    ion-buttons[start] {
+        order: 2;
+    }
+    .tqs.fab, .tqs.fab-md{
+        border-radius: 2px;
+        width: 90px;
+        height: 30px;
+    }
+    .text-white{
+        color: white;
+    }
+
+    .spinner-md-bubbles circle {
+        fill: #f5f2f2;
+    }
+}

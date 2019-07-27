@@ -1,0 +1,60 @@
+<!--
+  Generated template for the UserProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-toolbar>
+    <ion-buttons start>
+      <button ion-button icon-only color="royal" menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Perfil de usuario</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list *ngIf="user">
+      <ion-item class="la">
+        <ion-label class="lab"  *ngIf="(typeUser == 'user' || typeUser == 'distribuitor') && user.lastname" stacked>Nombre:</ion-label>
+        <ion-label class="lab"  *ngIf="!user.lastname" stacked>Nombre de Usuario:</ion-label>
+        <ion-input type="text" [(ngModel)]="user.name" [disabled]="(typeUser != 'user') ? true : false" ></ion-input>
+      </ion-item>
+    
+      <ion-item class="la" *ngIf="user.lastname">
+        <ion-label class="lab" stacked>Apellido:</ion-label>
+        <ion-input type="text" [(ngModel)]="user.lastname"  [disabled]="(typeUser != 'user') ? true : false"></ion-input>
+      </ion-item>
+
+      <ion-item class="la" *ngIf="typeUser == 'user'">
+        <ion-label class="lab" stacked>Teléfono contacto:</ion-label>
+        <ion-input type="number" [(ngModel)]="user.phone_cell"></ion-input>
+      </ion-item>
+
+      <ion-item class="la" *ngIf="typeUser != 'user'">
+          <ion-label class="lab" stacked>Placa:</ion-label>
+          <ion-input type="text" [(ngModel)]="user.plaque" [disabled]="(typeUser != 'user') ? true : false"></ion-input>
+      </ion-item>
+
+      <!-- <ion-item class="la">
+        <ion-label class="lab" stacked >Zona:</ion-label>
+        <ion-select [(ngModel)]="user.zone"  [disabled]="(typeUser != 'user') ? true : false">
+          <ion-option value="Norte">Norte</ion-option>
+          <ion-option value="Centro">Centro</ion-option>
+          <ion-option value="Sur">Sur</ion-option>
+        </ion-select>
+      </ion-item> -->
+
+    </ion-list>
+
+    <div padding *ngIf="typeUser == 'user' && user" >
+      <button *ngIf="!user.lastname" class="btn" ion-button block outline [disabled]="!enable || !user.name|| !user.phone_cell" (click)="saveDataUser(user)">Actualizar Perfil</button>
+      <button *ngIf="user.lastname" class="btn" ion-button block outline [disabled]="!enable || !user.name || !user.lastname || !user.phone_cell" (click)="saveDataUser(user)">Actualizar Perfil Usuario</button>
+    </div>
+
+</ion-content>

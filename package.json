@@ -1,0 +1,108 @@
+{
+  "name": "app",
+  "version": "0.0.1",
+  "author": "Ionic Framework",
+  "homepage": "http://ionicframework.com/",
+  "private": true,
+  "scripts": {
+    "clean": "ionic-app-scripts clean",
+    "build": "ionic-app-scripts build",
+    "lint": "ionic-app-scripts lint",
+    "ionic:build": "ionic-app-scripts build",
+    "ionic:serve": "ionic-app-scripts serve"
+  },
+  "dependencies": {
+    "@agm/core": "^1.0.0-beta.3",
+    "@angular/animations": "5.2.10",
+    "@angular/common": "5.2.10",
+    "@angular/compiler": "5.2.10",
+    "@angular/compiler-cli": "5.2.10",
+    "@angular/core": "5.2.10",
+    "@angular/fire": "^5.1.0",
+    "@angular/forms": "5.2.10",
+    "@angular/http": "5.2.10",
+    "@angular/platform-browser": "5.2.10",
+    "@angular/platform-browser-dynamic": "5.2.10",
+    "@ionic-native/core": "^4.11.0",
+    "@ionic-native/diagnostic": "^4.17.0",
+    "@ionic-native/facebook": "^4.15.0",
+    "@ionic-native/firebase": "^4.17.0",
+    "@ionic-native/geolocation": "^4.13.0",
+    "@ionic-native/google-plus": "^4.15.0",
+    "@ionic-native/local-notifications": "^4.17.0",
+    "@ionic-native/location-accuracy": "^4.17.0",
+    "@ionic-native/native-storage": "^4.11.0",
+    "@ionic-native/splash-screen": "4.7.0",
+    "@ionic-native/status-bar": "4.7.0",
+    "@ionic/lab": "^1.0.0",
+    "@ionic/pro": "1.0.20",
+    "@ionic/storage": "2.1.3",
+    "angularfire2": "^5.1.0",
+    "cordova-android-firebase-gradle-release": "^2.0.0",
+    "cordova-android-play-services-gradle-release": "^2.0.0",
+    "cordova-browser": "5.0.3",
+    "cordova-ios": "4.5.5",
+    "cordova-plugin-badge": "^0.8.8",
+    "cordova-plugin-device": "^2.0.2",
+    "cordova-plugin-facebook4": "^1.7.4",
+    "cordova-plugin-firebase": "^2.0.5",
+    "cordova-plugin-geolocation": "^4.0.1",
+    "cordova-plugin-googleplus": "^5.3.2",
+    "cordova-plugin-ionic-keyboard": "^2.1.3",
+    "cordova-plugin-ionic-webview": "^1.2.1",
+    "cordova-plugin-local-notification": "^0.9.0-beta.2",
+    "cordova-plugin-nativestorage": "^2.3.2",
+    "cordova-plugin-request-location-accuracy": "^2.2.3",
+    "cordova-plugin-splashscreen": "^5.0.2",
+    "cordova-plugin-whitelist": "^1.3.3",
+    "cordova.plugins.diagnostic": "^4.0.11",
+    "cordova.plugins.diagnostic.api-22": "^100.0.0-api-22",
+    "firebase": "^5.5.8",
+    "firebase-tools": "^6.1.1",
+    "ionic-angular": "3.9.2",
+    "ionicons": "3.0.0",
+    "promise-polyfill": "^8.1.0",
+    "react-native-image-picker": "^0.26.10",
+    "rxjs": "^6.3.3",
+    "rxjs-compat": "^6.3.3",
+    "sw-toolbox": "3.6.0",
+    "zone.js": "0.8.26"
+  },
+  "devDependencies": {
+    "@ionic/app-scripts": "3.2.0",
+    "replace-in-file": "^3.4.2",
+    "typescript": "~2.6.2"
+  },
+  "description": "An Ionic project",
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-device": {},
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-ionic-webview": {},
+      "cordova-plugin-ionic-keyboard": {},
+      "cordova-plugin-nativestorage": {},
+      "cordova.plugins.diagnostic": {},
+      "cordova-plugin-request-location-accuracy": {},
+      "cordova-plugin-firebase": {},
+      "cordova-plugin-local-notification": {},
+      "cordova-android-firebase-gradle-release": {
+        "FIREBASE_VERSION": "11.8.0"
+      },
+      "cordova-android-play-services-gradle-release": {
+        "PLAY_SERVICES_VERSION": "11.8.0"
+      },
+      "cordova-plugin-geolocation": {},
+      "cordova-plugin-googleplus": {
+        "REVERSED_CLIENT_ID": "com.googleusercontent.apps.800966370931-i0ibeumsfk1bltti65f8jv79tcm565hd"
+      },
+      "cordova-plugin-facebook4": {
+        "APP_ID": "187907558710352",
+        "APP_NAME": "AppGas"
+      }
+    },
+    "platforms": [
+      "ios"
+    ]
+  }
+}

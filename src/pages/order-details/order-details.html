@@ -1,0 +1,60 @@
+<!--
+  Generated template for the OrderDetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-content>
+  <ion-grid no-padding>
+    <ion-row align-items-center>
+      <ion-col col>
+        <ion-card class="map">
+            <agm-map [latitude]="orderDetail.latitude" [longitude]="orderDetail.longitude" [zoom]="zoom" [zoomControl]="false" [streetViewControl] = "false" [clickableIcons]="false">
+              <agm-marker [latitude]="orderDetail.latitude" [longitude]="orderDetail.longitude"></agm-marker>
+            </agm-map>
+            <ion-fab right top>
+              <button ion-fab class="tqs">
+                  {{orderDetail.numberGas}} tanques
+              </button>
+            </ion-fab>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="userOrder">
+      <ion-col col>
+        <ion-card>
+          <ion-card-content>
+            Nombre: {{userOrder.name}} {{userOrder.lastname}}
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="userOrder">
+      <ion-col col>
+        <ion-card>
+          <ion-card-content>
+            Teléfono: {{userOrder.phone_cell}}
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="userOrder">
+        <ion-col col>
+          <ion-card>
+            <ion-card-content text-justify>
+             Referencia: {{orderDetail.reference}}
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    <ion-row align-items-end *ngIf="orderDetail.state != 'Aceptado'">
+        <ion-col offset-6 col-3>
+          <button ion-button  class="btn" block outline (click)="ignoreOrder()" >Ignorar</button>
+        </ion-col>
+        <ion-col col-3>
+          <button  ion-button  class="btn" block outline (click)="acceptOrder(orderDetail)" >Aceptar</button>
+        </ion-col>
+      </ion-row>
+  </ion-grid>
+</ion-content>

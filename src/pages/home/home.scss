@@ -1,0 +1,45 @@
+page-home {
+	.fb, .goo{
+		border-radius: 25px;
+	}
+
+	.reg{
+		color:#FFFFFF;
+		text-decoration: underline; 
+	}
+
+	.labD{
+		color: white;
+	}
+
+	.dis.item-md.item-block .item-inner {
+		border-bottom: none !important;
+	}
+	.list-md .item-input:last-child {
+		border-bottom: 1px solid #dedede;
+	}
+	.list-md > .item-block:last-child .item-inner {
+		border-bottom: none !important;
+	}
+	.pregunta{
+		color: white;	
+	}
+
+	.list-md .item-input.item-input-has-focus:last-child, .list-md .item-input.input-has-focus:last-child {
+		border-bottom-color: #dedede ;
+		-webkit-box-shadow: inset 0 -1px 0 0 #dedede;
+		box-shadow: inset 0 -1px 0 0 #dedede;
+	}
+
+	.item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+
+		border-bottom-color: #32db64 ;
+		-webkit-box-shadow: inset 0 -1px 0 0 #32db64;
+		box-shadow: inset 0 -1px 0 0 #32db64;
+	
+	}
+	ion-label.title{
+		display: contents;
+	}
+	
+}

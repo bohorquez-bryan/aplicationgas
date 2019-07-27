@@ -1,0 +1,93 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>
+			AppGas Quito
+			<ion-label class="title" *ngIf="isUser" >(Usuario)</ion-label>
+			<ion-label class="title" *ngIf="!isUser" >(Distribuidor)</ion-label>
+		</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<ion-grid>
+		<ion-row>
+			<ion-col text-center col >
+				<img *ngIf="isUser" src="assets/imgs/logot.png">
+				<img *ngIf="!isUser" src="assets/imgs/lcamion.png">
+			</ion-col>
+		</ion-row>
+
+		<ion-row>
+			<ion-col text-center col>
+				<ion-list>
+					<ion-item class="la"  *ngIf="isUser">
+							<ion-icon class="ic" ios="ios-mail" md="md-mail" item-left></ion-icon>
+							<ion-label class="lab" stacked >Email:</ion-label>
+							<ion-input type="text" [(ngModel)]="loginData.email"></ion-input>
+					</ion-item>
+			
+					<ion-item class="la"  *ngIf="!isUser">
+						<ion-icon class="ic" ios="ios-card" md="md-card" item-left></ion-icon>
+						<ion-label class="lab" stacked >Cédula:</ion-label>
+						<ion-input type="number" [(ngModel)]="loginData.email"></ion-input>
+					</ion-item>
+			
+					<ion-item class="la pass">
+						<ion-icon class="ic" name="key" item-left></ion-icon>
+						<ion-label class="lab" stacked >Password:</ion-label>
+						<ion-input type="password" [(ngModel)]="loginData.password"></ion-input>
+					</ion-item>
+					<!-- <ion-item class="la"></ion-item> -->
+				</ion-list>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col col>
+				<div text-center>
+					<button ion-button class="btn" (click)="loginCorreo()" [disabled]="!loginData.email || !loginData.password" block outline>Entrar</button>
+				</div>
+			</ion-col>
+		</ion-row>
+
+		<ion-row align-items-end>
+			<ion-col col text-center align-self-end>
+				<ion-item class="la dis">
+					<ion-label class="labD" text-right *ngIf="isUser">¿Eres Distribuidor?</ion-label> 
+					<ion-label class="labD" text-right *ngIf="!isUser">¿Eres Usuario?</ion-label> 
+					<ion-toggle checked="false" (ionChange)="changeUser()"></ion-toggle>
+				</ion-item>
+			</ion-col>
+		</ion-row>
+		
+		<ion-row *ngIf="isUser">
+			<ion-col col-6>
+				<button class="fb" full ion-button (click)="facebookLogin()"><ion-icon name="logo-facebook"></ion-icon>&nbsp;Facebook</button>
+			</ion-col>
+			<ion-col col-6>
+				<button class="goo" full ion-button color="danger" (click)="loginGoogle()"><ion-icon name="logo-google"></ion-icon>&nbsp;Google</button>
+			</ion-col>
+		</ion-row>
+
+		<ion-row *ngIf="isUser">
+			<ion-col col-8>
+				<p class="pregunta">¿No tienes una cuenta? -></p> 
+			</ion-col>
+			<ion-col col-4>
+				<p (click)="registro()"><a class="reg">Registrate</a></p>
+			</ion-col>
+		</ion-row>
+
+		<ion-row *ngIf="!isUser">
+			<ion-col col-5 align-self-center text-justify>
+					<p class="pregunta">Si eres distribuidor:</p> 
+			</ion-col>
+			<ion-col col-1 align-self-center>
+				<ion-icon class="pregunta" name="ios-information-circle-outline"></ion-icon>
+			</ion-col>
+			<ion-col col-6 align-self-center text-justify>
+				<p class="pregunta">Inicia sesión utilizando tu número de cédula en ambos campos</p>
+			</ion-col>
+		</ion-row>
+		
+	</ion-grid> 
+</ion-content>

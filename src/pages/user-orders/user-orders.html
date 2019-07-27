@@ -1,0 +1,107 @@
+<!--
+  Generated template for the UserOrdersPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons start>
+      <button ion-button icon-only color="royal" menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Mis Pedidos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div *ngIf="OrdersNorth && OrdersSouth && OrdersCenter;else content">
+      <div *ngIf="OrdersNorth.length != 0 || OrdersSouth.length != 0 || OrdersCenter.length != 0;else other_content">
+        <ion-item-group *ngIf="OrdersNorth.length != 0">
+          <ion-item-divider color="light" (tap)="showNorthOrder()">Solicitudes en Norte<ion-icon item-end [name]="iconSoliN"></ion-icon></ion-item-divider>
+          <div *ngIf="northShow">
+            <div *ngFor="let order of OrdersNorth" >
+              <ion-card>
+                <ion-item>
+                  <ion-icon md="md-checkmark" item-start></ion-icon>
+                  <h2 *ngIf="order.distriData" >Aceptado por: {{order.distriData.name}} {{order.distriData.lastname}}</h2>
+                  <p>Fecha: {{order.date}}</p>
+                  <button ion-fab class="tqs" item-end>
+                      {{order.numberGas}} tanques
+                  </button>
+                </ion-item>
+                <ion-card-content text-justify>
+                  Referencia: {{order.reference}}
+                </ion-card-content>
+              </ion-card>    
+            </div>  
+          </div>
+        </ion-item-group>
+
+        <ion-item-group *ngIf="OrdersSouth.length != 0">
+          <ion-item-divider color="light" (tap)="showSouthOrder()">Solicitudes en Sur<ion-icon item-end [name]="iconSoliS"></ion-icon></ion-item-divider>
+          <div *ngIf="southShow">
+            <div *ngFor="let order of OrdersSouth" >
+              <ion-card>
+                <ion-item>
+                  <ion-icon md="md-checkmark" item-start></ion-icon>
+                  <h2 *ngIf="order.distriData" >Aceptado por: {{order.distriData.name}} {{order.distriData.lastname}}</h2>
+                  <p>Fecha: {{order.date}}</p>
+                  <button ion-fab class="tqs" item-end>
+                      {{order.numberGas}} tanques
+                  </button>
+                </ion-item>
+                <ion-card-content text-justify>
+                  Referencia: {{order.reference}}
+                </ion-card-content>
+              </ion-card>    
+            </div>  
+          </div>
+        </ion-item-group>
+
+        <ion-item-group *ngIf="OrdersCenter.length != 0">
+          <ion-item-divider color="light" (tap)="showCenterOrder()">Solicitudes en Sur<ion-icon item-end [name]="iconSoliC"></ion-icon></ion-item-divider>
+          <div *ngIf="centerShow">
+            <div *ngFor="let order of OrdersCenter" >
+              <ion-card>
+                <ion-item>
+                  <ion-icon md="md-checkmark" item-start></ion-icon>
+                  <h2 *ngIf="order.distriData" >Aceptado por: {{order.distriData.name}} {{order.distriData.lastname}}</h2>
+                  <p>Fecha: {{order.date}}</p>
+                  <button ion-fab class="tqs" item-end>
+                      {{order.numberGas}} tanques
+                  </button>
+                </ion-item>
+                <ion-card-content text-justify>
+                  Referencia: {{order.reference}}
+                </ion-card-content>
+              </ion-card>    
+            </div>  
+          </div>
+        </ion-item-group>
+      </div>
+      <ng-template #other_content>
+        <ion-card>
+          <ion-card-content>
+              No se han hecho pedidos.
+          </ion-card-content>
+        </ion-card>
+      </ng-template>
+    </div>
+    <ng-template #content>
+        <ion-grid>
+          <ion-row justify-content-center>
+            <ion-col align-self-center col-2>
+                <ion-spinner name="bubbles"></ion-spinner>
+            </ion-col>
+            <ion-col align-self-center col-4>
+              <div class="text-white">
+                  Cargando solicitudes ...
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ng-template>
+</ion-content>

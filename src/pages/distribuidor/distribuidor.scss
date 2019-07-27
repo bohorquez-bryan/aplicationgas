@@ -1,0 +1,20 @@
+page-distribuidor {
+    ion-buttons[start] {
+        order: 2;
+    }
+    agm-map {
+        height: 300px;
+    }
+    
+    ion-item-divider{
+        margin: 10px 0px;
+    }
+
+    .text-white{
+        color: white;
+    }
+
+    .spinner-md-bubbles circle {
+        fill: #f5f2f2;
+    }
+}

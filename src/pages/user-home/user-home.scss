@@ -1,0 +1,28 @@
+page-user-home {
+    ion-buttons[start] {
+        order: 2;
+    }
+    .pedirStyle{
+        height: 100%;
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    agm-map {
+        height: 250px;
+    }
+
+    .lab{
+        color: white !important;
+    }
+
+    .la.map .item-inner{
+        padding-right: 0px;
+        border-bottom: none !important;
+    }
+    
+    [col] {
+        padding: 0px !important;
+    
+    }
+}
